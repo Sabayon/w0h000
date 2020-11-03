@@ -27,8 +27,11 @@
                 min-height: 110px;
             }
 
-            .content li li {
+            #dockerhub-https-hub-docker-com-u-sabayon-dashboard li li {
                 display: inline-block;
+                min-height: auto;
+            }
+            .content li li {
                 min-height: auto;
             }
 
@@ -53,15 +56,18 @@
             }
 
             .content a[href='https://hub.docker.com/u/sabayon/dashboard/']::before {
-                background-image: url("/img/docker-logo.png");
+                background-image: url("../img/docker-logo.png");
             }
 
-            .content a[href='https://atlas.hashicorp.com/Sabayon/boxes/spinbase-amd64']::before {
-                background-image: url("/img/vagrantcloud-logo.png");
+            .content a[href='http://dl.sabayon.org/sabayon/sbi/vagrant/Sabayon_Linux_DAILY_amd64_SpinBase.box']::before {
+                background-image: url("../img/vagrantcloud-logo.png");
             }
 
+            .content a[href='https://images.linuxcontainers.org/']::before {
+                background-image: url("../img/lxd-logo.png");
+            }
             .content a[href$='SpinBase.box']::before {
-                background-image: url("/img/vagrant-logo.png");
+                background-image: url("../img/vagrant-logo.png");
             }
 
             .content a[href$='SpinBase-ovz.tar.gz']::before {

@@ -282,8 +282,8 @@ li a[href='https://plus.google.com/+sabayon']::before {
     content: "\f1a0";
 }
 
-a[href='https://atlas.hashicorp.com/Sabayon/boxes/spinbase-amd64']::before {
-    background-image: url("/img/vagrantcloud-logo.png");
+a[href='http://dl.sabayon.org/sabayon/sbi/vagrant/Sabayon_Linux_DAILY_amd64_SpinBase.box']::before {
+    background-image: url('../img/vagrantcloud-logo.png');
 }
 
 a[href$='/donate'] {
