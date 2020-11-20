@@ -80,6 +80,13 @@ publish: init
 	$(GIT) push origin :gh-pages || true
 	$(GIT) subtree push --prefix=public git@github.com:$(CIRCLE_PROJECT_USERNAME)/$(CIRCLE_PROJECT_REPONAME).git gh-pages
 
+prepare: init build 
+	git checkout gh-pages
+	cp -rf $(THEME_PATH)/static/* $(PUBLIC_PATH)/
+	cp -rfv ${PUBLIC_PATH}/* ./
+	$(GIT) add -A
+	$(GIT) commit -m "updating site"
+
 clean:
 	rm -rf $(HUGO_PATH)
 	rm -rf $(THEME_PATH)
