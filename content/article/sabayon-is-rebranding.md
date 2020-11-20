@@ -21,6 +21,8 @@ For us this has been a very busy year. We have been building up a new toolset fo
 
 ## Sabayon project is rebranding to [MocaccinoOS](https://www.mocaccino.org/).
 
+![image4](https://user-images.githubusercontent.com/2420543/99854417-118c8a80-2b85-11eb-8b6a-1567203d306b.jpg)
+
 (This won’t be our final logo, we’re looking for contributors for artwork!)
 
 Migration to MocaccinoOS will work from any flavour of Sabayon, and we will keep pushing updates on the Sabayon Linux main repo until MocaccinoOS is fully bootstrapped and officially released to the world.
@@ -39,15 +41,17 @@ Entropy has proven to work well over the years, but it had some big limitations 
 
 This might sound fine, but this approach has several drawbacks:
 
-No easy way to have reproducible builds
-No easy way to have divergent packages (e.g. community repositories)
-No native distributed compilation (without resorting to something like distcc)
-The build server is a single point of failure
-Only one person can work on the build server at a time
-Special knowledge and tools needed around infrastructure
-No way to track changes on the build server in a human readable way (e.g. to backtrack problems)
-The power of containers
+- No easy way to have reproducible builds
+- No easy way to have divergent packages (e.g. community repositories)
+- No native distributed compilation (without resorting to something like distcc)
+- The build server is a single point of failure
+- Only one person can work on the build server at a time
+- Special knowledge and tools needed around infrastructure
+- No way to track changes on the build server in a human readable way (e.g. to backtrack problems)
 
+## The power of containers
+
+<img src=https://user-images.githubusercontent.com/2420543/99854507-3bde4800-2b85-11eb-9bc3-4eac5617a16f.jpg width=320>
 
 To address the above mentioned issues, Luet provides an abstraction layer on top of container technologies, like Docker, which let us build packages without having a central server building packages.
 
@@ -61,14 +65,16 @@ So why not use just Docker to build packages?
 While this might sound familiar, this is even more familiar to us. We have been using Docker into our infrastructure for more than 5 years already for building ISO images and community repositories.
 
 We encountered a few pitfalls of using Docker directly, which have been addressed in Luet:
-No first class representation of a package definition. 
-It’s up to you to maintain reverse dependencies of docker images, which images need updating when a base image changes
-Images can be based on only a single base image; you can’t have package A coming from Image B and C unless you handle that manually.
-No structured way to represent a tree of related images
+- No first class representation of a package definition. 
+- It’s up to you to maintain reverse dependencies of docker images, which images need updating when a base image changes
+- Images can be based on only a single base image; you can’t have package A coming from Image B and C unless you handle that manually.
+- No structured way to represent a tree of related images
 
+![image3](https://user-images.githubusercontent.com/2420543/99854416-0fc2c700-2b85-11eb-8823-544459b77423.png)
 
 Luet provides an abstraction layer on top of the container image layer to make the package a first class construct. A package definition and all its dependencies are translated by Luet to Dockerfiles which can then be built anywhere that docker runs.
-Dependency resolution
+
+## Dependency resolution
 To resolve the dependency tree Luet uses a SAT solver and no database. It is responsible for calculating the dependencies of a package and to prevent conflicts. The Luet core is still young, but it has a comprehensive test suite that we use to validate any future changes.
 
 ## Pluggable system
@@ -82,11 +88,11 @@ Plugins instead are expanding Luet vertically by hooking into internal events. P
 We are building a Musl LFS branch. It is completely from scratch and has just a few packages, which you can see [here](https://packages.mocaccino.org/mocaccino-musl-universe) and [here](https://packages.mocaccino.org/mocaccino-micro) . The big advantage with Luet here, is that you can build and fork the entire tree and build it locally without any target chroot - Luet will take care of that for you.
 
 ## Statically built
-And finally, Luet is written entirely in Go and comes as a single static binary. This has a few advantages:
-Easy to recover. You can use luet to bootstrap the system entirely from the ground-up. 
-Package manager has no dependencies on the packages that it installs. There is no chance of breaking the package manager by installing a conflicting package, or uninstalling one.
-Portable - it can run on any architecture
 
+And finally, Luet is written entirely in Go and comes as a single static binary. This has a few advantages:
+- Easy to recover. You can use luet to bootstrap the system entirely from the ground-up. 
+- Package manager has no dependencies on the packages that it installs. There is no chance of breaking the package manager by installing a conflicting package, or uninstalling one.
+- Portable - it can run on any architecture
 
 And that’s not all, there’s even more exciting news still to come!
 

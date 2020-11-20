@@ -12,6 +12,8 @@ tags = [
 +++
 
 
+<img src=https://user-images.githubusercontent.com/2420543/99854407-0d606d00-2b85-11eb-9e17-4c066ee9e0e5.jpg width=320>
+
 
 Sabayon is about to move on to its next chapter. We are glad to announce that we are about to join forces with [Funtoo](http://funtoo.org/). 
 
