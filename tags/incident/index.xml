@@ -9,6 +9,134 @@
     <updated>Mon, 15 Jan 2018 00:00:00 UTC</updated>
      
     <item>
+      <title>Sabayon and Funtoo Linux Merge Projects</title>
+      <link>https://www.sabayon.org/article/joining-funtoo/</link>
+      <pubDate>Fri, 20 Nov 2020 00:00:00 UTC</pubDate>
+      <author>Sabayon Linux</author>
+      <guid>https://www.sabayon.org/article/joining-funtoo/</guid>
+      <description>&lt;p&gt;Sabayon is about to move on to its next chapter. We are glad to announce that we are about to join forces with &lt;a href=&#34;http://funtoo.org/&#34;&gt;Funtoo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Yes, you heard it well.&lt;/p&gt;
+
+&lt;p&gt;This is a special moment for our development team, as two strongly Gentoo focused communities are joining together.&lt;/p&gt;
+
+&lt;p&gt;“Funtoo Linux is a community-developed Linux meta-distribution based upon Gentoo Linux. Funtoo Linux is optimized for the best possible performance on the latest Intel and AMD hardware. Funtoo is led by Daniel Robbins, the creator of Gentoo Linux, and actively developed by the Funtoo community”&lt;/p&gt;
+
+&lt;p&gt;Funtoo shines for additional QA layers, proven reliability, and incredible performance setup out of the box, plus the wonderful metatools and Kits ecosystem. Funtoo has a strong community with a solid background.&lt;/p&gt;
+
+&lt;p&gt;By joining together forces, years of experience, knowledge, and tooling, we will be able to deliver the best Linux experience also in a binary format, stronger, and together.&lt;/p&gt;
+
+&lt;p&gt;We will mutually contribute to each others’ projects, actually merging our development teams.&lt;/p&gt;
+
+&lt;p&gt;Now we are bringing together our knowledge base and toolset to build new ecosystems and projects behind the same umbrella.&lt;/p&gt;
+
+&lt;p&gt;There isn’t a final decision yet on how we will move forward, but we will promise to keep everyone in the loop as the situation evolves.&lt;/p&gt;
+
+&lt;p&gt;Welcome &lt;a href=&#34;http://funtoo.org/&#34;&gt;Funtoo&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;Sabayon team&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sabayon project is rebranding to MocaccinoOS</title>
+      <link>https://www.sabayon.org/article/sabayon-is-rebranding/</link>
+      <pubDate>Fri, 20 Nov 2020 00:00:00 UTC</pubDate>
+      <author>Sabayon Linux</author>
+      <guid>https://www.sabayon.org/article/sabayon-is-rebranding/</guid>
+      <description>
+
+&lt;p&gt;Howdy!&lt;/p&gt;
+
+&lt;p&gt;It’s been quite a long time since we have made an official post, so here we are, almost at the end of 2020 discussing Sabayon&amp;rsquo;s future and upcoming changes.&lt;/p&gt;
+
+&lt;p&gt;Let’s be frank, we are nearing the end of Sabayon as we’ve known it, and we are looking back at what was great, and what could be improved upon. We haven’t been the best at communication - there has been radio silence for almost a year.&lt;/p&gt;
+
+&lt;p&gt;That doesn’t mean we weren’t active, or that we’ve abandoned the project… on the contrary!&lt;/p&gt;
+
+&lt;p&gt;For us this has been a very busy year. We have been building up a new toolset for upcoming releases, and trying to innovate and renew the project for the future. There are big changes coming soon, and now is the right time for us to finally share what’s coming next with you.&lt;/p&gt;
+
+&lt;h2 id=&#34;sabayon-project-is-rebranding-to-mocaccinoos-https-www-mocaccino-org&#34;&gt;Sabayon project is rebranding to &lt;a href=&#34;https://www.mocaccino.org/&#34;&gt;MocaccinoOS&lt;/a&gt;.&lt;/h2&gt;
+
+&lt;p&gt;(This won’t be our final logo, we’re looking for contributors for artwork!)&lt;/p&gt;
+
+&lt;p&gt;Migration to MocaccinoOS will work from any flavour of Sabayon, and we will keep pushing updates on the Sabayon Linux main repo until MocaccinoOS is fully bootstrapped and officially released to the world.&lt;/p&gt;
+
+&lt;p&gt;At the moment of writing, MocaccinoOS is not ready yet for daily usage, and we suggest you do not attempt to migrate any machine you rely upon just yet. That said, we welcome everyone to test out Mocaccino on any spare hardware you might have, or in virtual machines and provide feedback on where we might improve it.&lt;/p&gt;
+
+&lt;p&gt;Sabayon users will keep receiving updates on the sabayonlinux.org repositories, but the sabayon-weekly repositories have been frozen already. &lt;a href=&#34;https://wiki.sabayon.org/index.php?title=En:Entropy#enabling_a_different_repository_or_mirror&#34;&gt;See here for instructions for switching between these repositories&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;new-package-manager&#34;&gt;New package manager&lt;/h2&gt;
+
+&lt;p&gt;From 2019 we have been working on a new brand package manager, called &lt;a href=&#34;https://github.com/mudler/luet&#34;&gt;Luet&lt;/a&gt;, which will eventually replace Entropy. It is designed to solve some of the limitations and issues that we have observed while working with Entropy.
+Building packages&lt;/p&gt;
+
+&lt;p&gt;Entropy has proven to work well over the years, but it had some big limitations on the maintainer side. For example, it needs a central server to build packages, and packages have been maintained by hand for many years.&lt;/p&gt;
+
+&lt;p&gt;This might sound fine, but this approach has several drawbacks:&lt;/p&gt;
+
+&lt;p&gt;No easy way to have reproducible builds
+No easy way to have divergent packages (e.g. community repositories)
+No native distributed compilation (without resorting to something like distcc)
+The build server is a single point of failure
+Only one person can work on the build server at a time
+Special knowledge and tools needed around infrastructure
+No way to track changes on the build server in a human readable way (e.g. to backtrack problems)
+The power of containers&lt;/p&gt;
+
+&lt;p&gt;To address the above mentioned issues, Luet provides an abstraction layer on top of container technologies, like Docker, which let us build packages without having a central server building packages.&lt;/p&gt;
+
+&lt;p&gt;Images used to build packages are shared via Docker registries, so they can be reused later on, not only by our main build infrastructure, but also by anyone that wishes to build their own packages against the same environment - or who just wants to inspect the build environment.&lt;/p&gt;
+
+&lt;p&gt;Our new package manager solves these disadvantages. We can run reproducible builds, across a wide range of build infrastructure, and the process is much more open to contributors, or for folks to build their own packages using the same tools we use.&lt;/p&gt;
+
+&lt;h3 id=&#34;where-luet-comes-to-play&#34;&gt;Where Luet comes to play&lt;/h3&gt;
+
+&lt;p&gt;So why not use just Docker to build packages?
+While this might sound familiar, this is even more familiar to us. We have been using Docker into our infrastructure for more than 5 years already for building ISO images and community repositories.&lt;/p&gt;
+
+&lt;p&gt;We encountered a few pitfalls of using Docker directly, which have been addressed in Luet:
+No first class representation of a package definition.
+It’s up to you to maintain reverse dependencies of docker images, which images need updating when a base image changes
+Images can be based on only a single base image; you can’t have package A coming from Image B and C unless you handle that manually.
+No structured way to represent a tree of related images&lt;/p&gt;
+
+&lt;p&gt;Luet provides an abstraction layer on top of the container image layer to make the package a first class construct. A package definition and all its dependencies are translated by Luet to Dockerfiles which can then be built anywhere that docker runs.
+Dependency resolution
+To resolve the dependency tree Luet uses a SAT solver and no database. It is responsible for calculating the dependencies of a package and to prevent conflicts. The Luet core is still young, but it has a comprehensive test suite that we use to validate any future changes.&lt;/p&gt;
+
+&lt;h2 id=&#34;pluggable-system&#34;&gt;Pluggable system&lt;/h2&gt;
+
+&lt;p&gt;Luet can be extended in 2 ways, by extensions and plugins.&lt;/p&gt;
+
+&lt;p&gt;Extensions expand Luet featureset horizontally, so for example, “luet geniso” will allow you to build an iso using luet, without this needing to be part of the luet core.&lt;/p&gt;
+
+&lt;p&gt;Plugins instead are expanding Luet vertically by hooking into internal events. Plugins and Extensions can be written in any language, bash included!&lt;/p&gt;
+
+&lt;h2 id=&#34;musl-branch&#34;&gt;Musl branch&lt;/h2&gt;
+
+&lt;p&gt;We are building a Musl LFS branch. It is completely from scratch and has just a few packages, which you can see &lt;a href=&#34;https://packages.mocaccino.org/mocaccino-musl-universe&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;https://packages.mocaccino.org/mocaccino-micro&#34;&gt;here&lt;/a&gt; . The big advantage with Luet here, is that you can build and fork the entire tree and build it locally without any target chroot - Luet will take care of that for you.&lt;/p&gt;
+
+&lt;h2 id=&#34;statically-built&#34;&gt;Statically built&lt;/h2&gt;
+
+&lt;p&gt;And finally, Luet is written entirely in Go and comes as a single static binary. This has a few advantages:
+Easy to recover. You can use luet to bootstrap the system entirely from the ground-up.
+Package manager has no dependencies on the packages that it installs. There is no chance of breaking the package manager by installing a conflicting package, or uninstalling one.
+Portable - it can run on any architecture&lt;/p&gt;
+
+&lt;p&gt;And that’s not all, there’s even more exciting news still to come!&lt;/p&gt;
+
+&lt;h2 id=&#34;call-for-contributors&#34;&gt;Call for contributors&lt;/h2&gt;
+
+&lt;p&gt;We are always looking to grow our community, and to share knowledge and experiences with Linux and computer technology, don’t hesitate to engage and reach us via &lt;a href=&#34;https://www.mocaccino.org/community/&#34;&gt;slack and discourse&lt;/a&gt;!&lt;/p&gt;
+
+&lt;h2 id=&#34;call-for-artwork-contributions&#34;&gt;Call for artwork contributions&lt;/h2&gt;
+
+&lt;p&gt;As we are rebranding into MocaccinoOS we are in need of new artwork! If you have ideas and want to contribute, &lt;a href=&#34;https://www.mocaccino.org/community/&#34;&gt;reach to us over slack!&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Sabayon is still around!</title>
       <link>https://www.sabayon.org/article/sabayon-is-back-and-kicking/</link>
       <pubDate>Sun, 21 Jan 2018 00:00:00 UTC</pubDate>
@@ -322,112 +450,6 @@ and performance boosts, but maintaining stability.&lt;/p&gt;
 -Frosty&lt;/p&gt;
 
 &lt;h4 id=&#34;have-you-considered-donating-yet-help-us-donate-donate-today&#34;&gt;Have you considered donating yet? Help us! &lt;a href=&#34;https://www.sabayon.org/donate&#34;&gt;Donate&lt;/a&gt; today!&lt;/h4&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Special Release: Sabayon 16.06 for ARM</title>
-      <link>https://www.sabayon.org/article/special-release-sabayon-1606-arm/</link>
-      <pubDate>Sun, 29 May 2016 00:00:00 UTC</pubDate>
-      <author>Sabayon Linux</author>
-      <guid>https://www.sabayon.org/article/special-release-sabayon-1606-arm/</guid>
-      <description>&lt;p&gt;&lt;img width=&#34;300px&#34; src=&#34;http://i.imgur.com/JzlQA4w.jpg&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;Dear users,&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;m glad to announce the new Sabayon 16.06 RaspberryPi image. This month you can enjoy the new Media Center release which features Kodi optimized for the Raspberry Pi model 2 and 3.&lt;/p&gt;
-
-&lt;p&gt;To celebrate that, we also upgraded the Base image, which comes now with the latest packages from the repositories.
-The image comes out of the box with the latest 4.4.y kernel and with the &lt;a href=&#34;https://github.com/Hexxeh/rpi-update#rpi-update&#34;&gt;rpi-update&lt;/a&gt;
-The Media Center image is working as-is Out-of-the-Box and will also perform auto-upgrades automatically on your behalf. And if your TV is modern enough, you can control Kodi also from your TV remote (yay!).&lt;/p&gt;
-
-&lt;p&gt;The image on boot will automatically connect to the network, and you can ssh with the following credentials:&lt;/p&gt;
-
-&lt;p&gt;username: sabayon password: sabayon&lt;/p&gt;
-
-&lt;p&gt;The user is already sudo enabled, but the root user is also available:&lt;/p&gt;
-
-&lt;p&gt;username: root password: root&lt;/p&gt;
-
-&lt;p&gt;The credentials are valid for both the MediaCenter and Base editions. You can use nmtui, the command line utility for NetworkManager to manage the network connections, included wifi.&lt;/p&gt;
-
-&lt;p&gt;You can download the image from &lt;a href=&#34;http://dl.sabayon.org/iso/monthly/&#34;&gt;our mirrors&lt;/a&gt;, you can find it under the iso/monthly/ directory:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[Sabayon_Linux_16.06_armv7l_RPi_MediaCenter_8GB.img.xz](http://dl.sabayon.org/iso/monthly/Sabayon_Linux_16.06_armv7l_RPi_MediaCenter_8GB.img.xz)
-[Sabayon_Linux_16.06_armv7l_RPi_Base_8GB.img.xz](http://dl.sabayon.org/iso/monthly/Sabayon_Linux_16.06_armv7l_RPi_Base_8GB.img.xz)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Or you can use the &lt;a href=&#34;http://mirror1.mirror.garr.it/mirrors/sabayonlinux/iso/monthly/Sabayon_Linux_16.06_armv7l_RPi_MediaCenter_8GB.img.xz&#34;&gt;italian mirror&lt;/a&gt; (which already have the image available).&lt;/p&gt;
-
-&lt;p&gt;To write the image to the sdcard, you can just use xzcat:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;xzcat Sabayon_Linux_16.06_armv7l_RPi_Base_8GB.img.xz &amp;gt; /dev/mmcblk0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;or you can uncompress and use dd:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;unxz Sabayon_Linux_16.06_armv7l_RPi_Base_8GB.img.xz
-dd if=Sabayon_Linux_16.06_armv7l_RPi_Base_8GB.img of=/dev/mmcblk0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Of course replace /dev/mmcblk0 with your device, and the image name with the one you picked up.&lt;/p&gt;
-
-&lt;p&gt;Apart from what you may expect, we won&amp;rsquo;t release amd64 images this month: we have been slowed down by recent upstream bumps that broke our Calamares Installer, making a sucessfully installation an operation mostly impossible. Also because of that, we are thinking to change the release schedule, and provide stable and fixed in time releases. Don&amp;rsquo;t worry! This does not mean that we will stop building daily images, we will never do that!  We are just considering the idea of slowing down our release model (maybe every two months) to give you the best experience and give us the ability to test the new features and enhancements.&lt;/p&gt;
-
-&lt;p&gt;Many thanks to Joost (joost_op), Ben (optiz0r) and of course Fabio (lxnay) for testing and for their support thru the development of the RPi image, and Tom Ruis for the illustration on the top of the article (available in the full size  &lt;a href=&#34;http://i.imgur.com/Q5COMf1.jpg&#34;&gt;here&lt;/a&gt;  and  &lt;a href=&#34;http://i.imgur.com/JzlQA4w.jpg&#34;&gt;here&lt;/a&gt; )!  Nothing of that would have been possible without you and our community!&lt;/p&gt;
-
-&lt;p&gt;We have already ~2000 packages in the ARMhfp repository, including Docker already cutted for ARM boards (yay!), GNOME, XFCE, LXDE and bunch of packages you might find interesting.
-ROS framework - The robotics framework, Cacti, Kodi, LAMP stack, just to name a few that are already available on the main repository!
-For package requests, head over our &lt;a href=&#34;https://bugs.sabayon.org/&#34;&gt;bugzilla&lt;/a&gt;.
-If you appreciate our efforts towards the ARM architecture, please consider to &lt;a href=&#34;https://www.sabayon.org/donate&#34;&gt;donate us&lt;/a&gt; either hardware or money to buy it!&lt;/p&gt;
-
-&lt;p&gt;Enjoy,
-Ettore Di Giacinto (mudler)&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>ARM meet Sabayon, Sabayon meet ARM.</title>
-      <link>https://www.sabayon.org/article/arm-meet-sabayon-sabayon-meet-arm/</link>
-      <pubDate>Sat, 30 Apr 2016 00:00:00 UTC</pubDate>
-      <author>Sabayon Linux</author>
-      <guid>https://www.sabayon.org/article/arm-meet-sabayon-sabayon-meet-arm/</guid>
-      <description>&lt;p&gt;We are  glad to announce the immediate availability of Sabayon ARM (hfp) for Raspberry Pi 2 and 3.&lt;/p&gt;
-
-&lt;p&gt;This is our first step towards ARM support, the package release scheduling will be different from our amd64 variant. Updates will be on a period of 6 months, except for security or special updates.&lt;/p&gt;
-
-&lt;p&gt;The image comes out of the box with the latest 4.4.y kernel and with the rpi-update tool that can be used to update kernel and firmware.&lt;/p&gt;
-
-&lt;p&gt;The Username/Password is sabayon:sabayon, and sudo is already set-up.  Just flash the image with dd, and attach it to a network (it will gets an ip automatically from your network).&lt;/p&gt;
-
-&lt;p&gt;The OS is set to automatically boot and start eth0 and sshd (so you can connect to it via ssh).&lt;/p&gt;
-
-&lt;p&gt;The images will be soon available on all the Sabayon mirrors. For now you can download it from the official TOP-IX italian mirror:&lt;/p&gt;
-
-&lt;p&gt;&lt;ins datetime=&#34;2018-02-16&#34;&gt;(Removed broken links)&lt;/ins&gt;&lt;/p&gt;
-
-&lt;p&gt;you can however browse our mirror list the image could be found under the iso/monthly/ directory.&lt;/p&gt;
-
-&lt;p&gt;To write the image to the sdcard, you can just use xzcat:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;xzcat Sabayon_Linux_16_armv7l_RPi_Base_8GB.img.xz &amp;gt; /dev/mmcblk0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;or you can uncompress and use dd:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;unxz Sabayon_Linux_16_armv7l_RPi_Base_8GB.img.xz
-dd if=Sabayon_Linux_16_armv7l_RPi_Base_8GB.img of=/dev/mmcblk0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We have already ~2000 packages in the ARMhfp repository, including Docker already cutted for ARM boards (yay!), GNOME, XFCE, LXDE and bunch of packages you might find interesting.&lt;/p&gt;
-
-&lt;p&gt;ROS framework - The robotics framework, Cacti, Kodi, LAMP stack, just to name a few that are already available on the main repository!&lt;/p&gt;
-
-&lt;p&gt;For package requests, head over our bugzilla.&lt;/p&gt;
-
-&lt;p&gt;If you appreciate our efforts towards the ARM architecture, please consider to donate us either hardware or money to buy it!&lt;/p&gt;
-
-&lt;p&gt;Enjoy!&lt;/p&gt;
 </description>
     </item>
     
