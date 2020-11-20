@@ -323,25 +323,25 @@
   </url>
   
   <url>
-    <loc>https://www.sabayon.org/tags/releases/</loc>
-    <lastmod>2019-03-31T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.sabayon.org/categories/releases/</loc>
     <lastmod>2019-03-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.sabayon.org/tags/sabayon/</loc>
-    <lastmod>2020-11-20T00:00:00+00:00</lastmod>
+    <loc>https://www.sabayon.org/tags/releases/</loc>
+    <lastmod>2019-03-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.sabayon.org/categories/sabayon/</loc>
+    <lastmod>2020-11-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.sabayon.org/tags/sabayon/</loc>
     <lastmod>2020-11-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

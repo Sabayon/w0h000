@@ -73,6 +73,8 @@
 
 <h2 id="sabayon-project-is-rebranding-to-mocaccinoos-https-www-mocaccino-org">Sabayon project is rebranding to <a href="https://www.mocaccino.org/">MocaccinoOS</a>.</h2>
 
+<p><img src="https://user-images.githubusercontent.com/2420543/99854417-118c8a80-2b85-11eb-8b6a-1567203d306b.jpg" alt="image4" /></p>
+
 <p>(This won’t be our final logo, we’re looking for contributors for artwork!)</p>
 
 <p>Migration to MocaccinoOS will work from any flavour of Sabayon, and we will keep pushing updates on the Sabayon Linux main repo until MocaccinoOS is fully bootstrapped and officially released to the world.</p>
@@ -90,14 +92,19 @@ Building packages</p>
 
 <p>This might sound fine, but this approach has several drawbacks:</p>
 
-<p>No easy way to have reproducible builds
-No easy way to have divergent packages (e.g. community repositories)
-No native distributed compilation (without resorting to something like distcc)
-The build server is a single point of failure
-Only one person can work on the build server at a time
-Special knowledge and tools needed around infrastructure
-No way to track changes on the build server in a human readable way (e.g. to backtrack problems)
-The power of containers</p>
+<ul>
+<li>No easy way to have reproducible builds</li>
+<li>No easy way to have divergent packages (e.g. community repositories)</li>
+<li>No native distributed compilation (without resorting to something like distcc)</li>
+<li>The build server is a single point of failure</li>
+<li>Only one person can work on the build server at a time</li>
+<li>Special knowledge and tools needed around infrastructure</li>
+<li>No way to track changes on the build server in a human readable way (e.g. to backtrack problems)</li>
+</ul>
+
+<h2 id="the-power-of-containers">The power of containers</h2>
+
+<p><img src=https://user-images.githubusercontent.com/2420543/99854507-3bde4800-2b85-11eb-9bc3-4eac5617a16f.jpg width=320></p>
 
 <p>To address the above mentioned issues, Luet provides an abstraction layer on top of container technologies, like Docker, which let us build packages without having a central server building packages.</p>
 
@@ -110,15 +117,22 @@ The power of containers</p>
 <p>So why not use just Docker to build packages?
 While this might sound familiar, this is even more familiar to us. We have been using Docker into our infrastructure for more than 5 years already for building ISO images and community repositories.</p>
 
-<p>We encountered a few pitfalls of using Docker directly, which have been addressed in Luet:
-No first class representation of a package definition.
-It’s up to you to maintain reverse dependencies of docker images, which images need updating when a base image changes
-Images can be based on only a single base image; you can’t have package A coming from Image B and C unless you handle that manually.
-No structured way to represent a tree of related images</p>
+<p>We encountered a few pitfalls of using Docker directly, which have been addressed in Luet:</p>
 
-<p>Luet provides an abstraction layer on top of the container image layer to make the package a first class construct. A package definition and all its dependencies are translated by Luet to Dockerfiles which can then be built anywhere that docker runs.
-Dependency resolution
-To resolve the dependency tree Luet uses a SAT solver and no database. It is responsible for calculating the dependencies of a package and to prevent conflicts. The Luet core is still young, but it has a comprehensive test suite that we use to validate any future changes.</p>
+<ul>
+<li>No first class representation of a package definition.</li>
+<li>It’s up to you to maintain reverse dependencies of docker images, which images need updating when a base image changes</li>
+<li>Images can be based on only a single base image; you can’t have package A coming from Image B and C unless you handle that manually.</li>
+<li>No structured way to represent a tree of related images</li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/2420543/99854416-0fc2c700-2b85-11eb-8823-544459b77423.png" alt="image3" /></p>
+
+<p>Luet provides an abstraction layer on top of the container image layer to make the package a first class construct. A package definition and all its dependencies are translated by Luet to Dockerfiles which can then be built anywhere that docker runs.</p>
+
+<h2 id="dependency-resolution">Dependency resolution</h2>
+
+<p>To resolve the dependency tree Luet uses a SAT solver and no database. It is responsible for calculating the dependencies of a package and to prevent conflicts. The Luet core is still young, but it has a comprehensive test suite that we use to validate any future changes.</p>
 
 <h2 id="pluggable-system">Pluggable system</h2>
 
@@ -134,10 +148,13 @@ To resolve the dependency tree Luet uses a SAT solver and no database. It is res
 
 <h2 id="statically-built">Statically built</h2>
 
-<p>And finally, Luet is written entirely in Go and comes as a single static binary. This has a few advantages:
-Easy to recover. You can use luet to bootstrap the system entirely from the ground-up.
-Package manager has no dependencies on the packages that it installs. There is no chance of breaking the package manager by installing a conflicting package, or uninstalling one.
-Portable - it can run on any architecture</p>
+<p>And finally, Luet is written entirely in Go and comes as a single static binary. This has a few advantages:</p>
+
+<ul>
+<li>Easy to recover. You can use luet to bootstrap the system entirely from the ground-up.</li>
+<li>Package manager has no dependencies on the packages that it installs. There is no chance of breaking the package manager by installing a conflicting package, or uninstalling one.</li>
+<li>Portable - it can run on any architecture</li>
+</ul>
 
 <p>And that’s not all, there’s even more exciting news still to come!</p>
 
