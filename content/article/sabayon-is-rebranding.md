@@ -65,6 +65,7 @@ So why not use just Docker to build packages?
 While this might sound familiar, this is even more familiar to us. We have been using Docker into our infrastructure for more than 5 years already for building ISO images and community repositories.
 
 We encountered a few pitfalls of using Docker directly, which have been addressed in Luet:
+
 - No first class representation of a package definition. 
 - It’s up to you to maintain reverse dependencies of docker images, which images need updating when a base image changes
 - Images can be based on only a single base image; you can’t have package A coming from Image B and C unless you handle that manually.
@@ -90,6 +91,7 @@ We are building a Musl LFS branch. It is completely from scratch and has just a 
 ## Statically built
 
 And finally, Luet is written entirely in Go and comes as a single static binary. This has a few advantages:
+
 - Easy to recover. You can use luet to bootstrap the system entirely from the ground-up. 
 - Package manager has no dependencies on the packages that it installs. There is no chance of breaking the package manager by installing a conflicting package, or uninstalling one.
 - Portable - it can run on any architecture
